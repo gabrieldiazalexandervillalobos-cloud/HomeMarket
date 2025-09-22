@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Virtual de Productos del Hogar</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- HEADER -->
+  <!-- Menú superior con accesos rápidos -->
+  <div class="top-bar">
+    <div class="top-links">
+      <a href="#">Ayuda</a>
+      <a href="#">Mi Cuenta</a>
+      <a href="#">Ofertas</a>
+      <a href="#">Soporte</a>
+    </div>
+ <header class="header">
+  <div class="logo-container">
+    <!-- Cambia src por la ruta de tu logo -->
+    <img src="imagen/logo.png" alt="HomeMarket" class="logo">
+    <h1 class="logo-text">HomeMarket</h1>
+  </div>
+
+  <nav class="navbar">
+    <a data-section="inicio" class="active">Inicio</a>
+  
+    <div class="submenu">
+      <a class="submenu-btn">Servicios ▾</a>
+      <div class="submenu-content">
+        <a data-section="servicios">Todos</a>
+        <a data-section="publicaciones">Publicaciones</a>
+        <a data-section="aliados">Aliados</a>
+        <a data-section="interes">Enlaces de Interés</a>
+        <a data-section="areas">areas</a>
+      </div>
+    </div>
+<a data-section="productos">Productos</a>
+    <a data-section="carrito">Carrito</a>
+    <a data-section="suscripcion">Suscripción</a>
+    <a data-section="contacto">Contacto</a>
+    <a data-section="promociones">Promociones</a>
+    <a data-section="blog">blog</a>
+    <a data-section="Eventos">Eventos</a>
+  </nav>
+  </div>
+  </nav>
+  <div class="hamburger" id="hamburger">
+    <div></div><div></div><div></div>
+  </div>
+  <!-- Barra de búsqueda -->
+<div class="search-wrap" role="search">
+  <input id="searchInput" type="text"
+         placeholder="Buscar..."
+         aria-label="Buscar"/>
+  <button id="searchBtn" type="button">Buscar</button>
+</div>
+<!-- Resultados rápidos (opcional) -->
+<div id="searchResults" class="search-results"></div>
+</header>
+<!-- CONTENIDO -->
+  <main>
+  <!-- INICIO -->
+  <section id="inicio" class="active">
+    <h2>Bienvenido a HomeMarket</h2>
+    <p>Encuentra todo para tu hogar en un solo lugar: cocina, limpieza, decoración y más.</p>
+
+    <!-- Historia y imagen al lado -->
+    <div class="story-container">
+      <div class="story-content">
+        <div class="story-text">
+          <h3>La historia de HomeMarket</h3>
+          <p>
+            HomeMarket nació con una simple misión: hacer que todos los productos esenciales para el hogar sean fáciles de encontrar, cómodos de comprar y accesibles para todos. Desde utensilios de cocina, hasta soluciones de limpieza y decoración, queremos que tu hogar sea un lugar más cómodo y organizado.
+          </p>
+          <p>
+            Comenzamos con un pequeño catálogo, pero nuestra pasión por ofrecer productos de calidad nos ha permitido crecer y expandirnos. Hoy, somos tu tienda virtual de confianza, con miles de productos para cada rincón de tu casa. Ya sea que estés buscando lo último en gadgets para la cocina o simplemente quieras renovar tu limpieza diaria, en HomeMarket lo tenemos todo.
+          </p>
+          <p>
+ Nuestra misión es ofrecerte una experiencia de compra segura, fácil y rápida, sin complicaciones. Navega por nuestro sitio, descubre nuestras ofertas y transforma tu hogar con los mejores productos del mercado.
+          </p>
+        </div>
+        <!-- Imagen al lado -->
+        <div class="story-image">
+          <img src="imagen/3.jpg" alt="Imagen de productos de hogar">
+        </div>
+      </div>
+        <div class="carousel-slide">
+          <img class="imageSlide" src="imagen/2.jpg" alt="" />
+          <div class="content-slide">
+            <h2 class="content-title">Título</h2>
+            <p class="content-text">Texto</p>
+            <button class="content-btn">Leer Más...</button>
+          </div>
+        </div>
+        <div class="navegation">
+          <div class="btn-nav"></div>
+          <div class="btn-nav"></div>
+          <div class="btn-nav"></div>
+          <div class="btn-nav"></div>
+          <div class="btn-nav"></div>
+        </div>
+      <br>
+      <br>
+        <h2>Productos Disponibles</h2>
+        <br>
+        <div class="carrusel-wrapper">
+ <button class="btn prev" onclick="scrollLeftFunc()">&#10094;</button>
+          <div class="cards-container" id="cards">
+            
+            <div class="card">
+              <img src="imagen/2.jpg" alt="Escoba Multiusos" class="imagenes-ajustadas"/>
+              <p style="font-weight: bold;">ESCOBA MULTIUSOS</p>
+              <p>Ideal para interiores y exteriores, con cerdas resistentes.</p>
+              <p class="combo-button">PRECIO $4.99</p>
+            </div>
+      
+            <div class="card">
+              <img src="images/detergente.jpg" alt="Detergente Líquido" class="imagenes-ajustadas"/>
+              <p style="font-weight: bold;">DETERGENTE LÍQUIDO</p>
+              <p>Rinde más, elimina manchas difíciles y cuida tu ropa.</p>
+              <p class="combo-button">PRECIO $8.50</p>
+            </div>
+      
+            <div class="card">
+              <img src="images/trapeador.jpg" alt="Trapeador Giratorio" class="imagenes-ajustadas"/>
+              <p style="font-weight: bold;">TRAPEADOR GIRATORIO</p>
+              <p>Con balde exprimidor, perfecto para pisos brillantes.</p>
+              <p class="combo-button">PRECIO $15.99</p>
+            </div>
+ <div class="card">
+              <img src="images/cloro.jpg" alt="Cloro Desinfectante" class="imagenes-ajustadas"/>
+              <p style="font-weight: bold;">CLORO DESINFECTANTE</p>
+              <p>Elimina el 99.9% de bacterias en tu hogar.</p>
+              <p class="combo-button">PRECIO $3.25</p>
+            </div>
+      
+            <div class="card">
+              <img src="images/suavizante.jpg" alt="Suavizante de Ropa" class="imagenes-ajustadas"/>
+              <p style="font-weight: bold;">SUAVIZANTE DE ROPA</p>
+              <p>Deja tu ropa suave, fresca y con aroma duradero.</p>
+              <p class="combo-button">PRECIO $6.75</p>
+            </div>
+      
+            <div class="card">
+              <img src="images/guantes.jpg" alt="Guantes de Limpieza" class="imagenes-ajustadas"/>
+              <p style="font-weight: bold;">GUANTES DE LIMPIEZA</p>
+              <p>Protege tus manos con guantes resistentes y cómodos.</p>
+              <p class="combo-button">PRECIO $2.50</p>
+            </div>
+</div>
+          <button class="btn next" onclick="scrollRightFunc()">&#10095;</button>
+        </div>
+      <br>
+    <h2>Los productos que podrás encontrar</h2>
+
+    <div class="grid">
+      <div class="gallery-card">
+        <img src="imagen/1.jpg" alt="Detergente Líquido">
+        <p>Detergente Líquido</p>
+      </div>
+      <div class="gallery-card">
+        <img src="https://via.placeholder.com/300x200?text=Limpiador+Multiusos" alt="Limpiador Multiusos">
+        <p>Limpiador Multiusos</p>
+      </div>
+      <div class="gallery-card">
+        <img src="https://via.placeholder.com/300x200?text=Desinfectante" alt="Desinfectante">
+        <p>Desinfectante</p>
+      </div>
+      <div class="gallery-card">
+        <img src="https://via.placeholder.com/300x200?text=Limpiavidrios" alt="Limpiavidrios">
+<p>Limpiavidrios</p>
+      </div>
+      <div class="gallery-card">
+        <img src="https://via.placeholder.com/300x200?text=Escoba+de+Plástico" alt="Escoba de Plástico">
+        <p>Escoba de Plástico</p>
+      </div>
+      <div class="gallery-card">
+        <img src="https://via.placeholder.com/300x200?text=Paños+Microfibra" alt="Paños Microfibra">
+        <p>Paños de Microfibra</p>
+      </div>
+      <div class="gallery-card">
+        <img src="https://via.placeholder.com/300x200?text=Guantes+de+Limpieza" alt="Guantes de Limpieza">
+        <p>Guantes de Limpieza</p>
+      </div>
+      <div class="gallery-card">
+        <img src="https://via.placeholder.com/300x200?text=Trapeador+Giratorio" alt="Trapeador Giratorio">
+        <p>Trapeador Giratorio</p>
+      </div>
+      <div class="gallery-card">
+        <img src="https://via.placeholder.com/300x200?text=Ambientador" alt="Ambientador">
+        <p>Ambientador en Spray</p>
+      </div>
+      <div class="gallery-card">
+        <img src="https://via.placeholder.com/300x200?text=Limpiador+de+Pisos" alt="Limpiador de Pisos">
+        <p>Limpiador de Pisos</p>
+      </div>
+    </div>
+  </section>
+    <!-- PRODUCTOS -->
+    <section id="productos">
+      <div class="productos-header">
+        <h2>Nuestros Productos</h2>
+        <div class="icono-carrito">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="contadorCarrito">0</span>
+        </div>
+      </div>
+    
+      <input type="text" id="filtroProductos" placeholder="Buscar por nombre o precio...">
+<div class="catalogo">
+        <div class="catalog-card">
+          <img src="https://via.placeholder.com/300x200?text=Juego+de+Sartenes" alt="Juego de sartenes" loading="lazy">
+          <h3>Juego de Sartenes</h3>
+          <p>$25.00</p>
+          <button class="btn-agregar" data-nombre="Juego de Sartenes" data-precio="25.00">Agregar al carrito</button>
+        </div>
+    
+        <div class="catalog-card">
+          <img src="https://via.placeholder.com/300x200?text=Aspiradora" alt="Aspiradora" loading="lazy">
+          <h3>Aspiradora Compacta</h3>
+          <p>$80.00</p>
+          <button class="btn-agregar" data-nombre="Aspiradora Compacta" data-precio="80.00">Agregar al carrito</button>
+        </div>
+    
+        <div class="catalog-card">
+          <img src="https://via.placeholder.com/300x200?text=Set+Decoracion" alt="Set Decoración" loading="lazy">
+          <h3>Set Decoración Sala</h3>
+          <p>$40.00</p>
+          <button class="btn-agregar" data-nombre="Set Decoración Sala" data-precio="40.00">Agregar al carrito</button>
+        </div>
+ <div class="catalog-card">
+          <img src="https://via.placeholder.com/300x200?text=Kit+Limpieza" alt="Kit Limpieza" loading="lazy">
+          <h3>Kit de Limpieza</h3>
+          <p>$18.50</p>
+          <button class="btn-agregar" data-nombre="Kit de Limpieza" data-precio="18.50">Agregar al carrito</button>
+        </div>
+      </div>
+    </section>
+    <!-- CARRITO -->
+    <section id="carrito">
+      <h2>Carrito de Compras</h2>
+      <ul id="listaCarrito"></ul>
+      <p>Total: $<span id="totalCarrito">0.00</span></p>
+      <button id="vaciarCarrito">Vaciar Carrito</button>
+      <br><br>
+      <button id="comprar">comprar</button>
+    </section>
+    <!-- SUSCRIPCIÓN -->
+    <section id="suscripcion">
+      <h2>Suscríbete a nuestras novedades</h2>
+      <form id="formSuscripcion">
+        <input type="email" id="nombreSuscripcion" placeholder="Ingresa tu Nombre" required>
+        <input type="email" id="ApellidoSuscripcion" placeholder="Ingresa tu Apellido" required>
+        <input type="email" id="correoSuscripcion" placeholder="Ingresa tu correo" required>
+ <input type="email" id="contraseñaSuscripcion" placeholder="Ingresa tu contraseña" required>
+    
+    
+        <label>
+          <input type="radio" name="plan" value="Básico - $5/mes" checked>
+          Básico - $5/mes
+        </label>
+        <label>
+          <input type="radio" name="plan" value="Estándar - $10/mes">
+          Estándar - $10/mes
+        </label>
+        <label>
+          <input type="radio" name="plan" value="Premium - $20/mes">
+          Premium - $20/mes
+        </label>
+    
+        <button type="submit">Suscribirme</button>
+      </form>
+      <p id="msgSuscripcion"></p>
+    </section>
+    <br>
+ <!-- CONTACTO -->
+<section id="contacto">
+  <div class="contact-card">
+    <h2>Contacto:</h2>
+    <p><i class="fa-solid fa-map-location-dot"></i> San Salvador, El Salvador</p>
+    <p><i class="fa-solid fa-phone"></i> +503 2222-3333</p>
+    <p><i class="fa-solid fa-envelope"></i> contacto@HomeMarket.com</p>
+  </div>
+  <!-- Botón flotante -->
+  <button id="chat-btn">💬</button>
+
+  <!-- Ventana del chat -->
+  <div id="chat-box">
+    <div id="chat-header">Asesora Virtual</div>
+    <div id="chat-messages"></div>
+    <div id="chat-input">
+      <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+      <button id="send-btn">➤</button>
+    </div>
+  </div>
+  <h2>Nuestra ubicación:</h2>
+  <iframe src="https://maps.google.com/maps?q=San%20Salvador&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</section>
+<section id="servicios">
+    <h2>Servicios para tu Hogar</h2>
+    <input type="text" class="buscador-seccion" placeholder="Buscar en servicios...">
+  
+    <div class="catalogo">
+      <div class="catalog-card">
+        <img src="https://via.placeholder.com/300x200?text=Instalacion+Electro" alt="Instalación Electrodomésticos">
+        <h3>Instalación de Electrodomésticos</h3>
+        <p>Servicio profesional para colocar lavadoras, refrigeradoras y más.</p>
+        <p><strong>$50.00</strong></p>
+      </div>
+  
+      <div class="catalog-card">
+        <img src="https://via.placeholder.com/300x200?text=Mantenimiento+Cocina" alt="Mantenimiento Cocina">
+        <h3>Mantenimiento de Cocina</h3>
+        <p>Limpieza y calibración de estufas, hornos y campanas extractoras.</p>
+        <p><strong>$30.00</strong></p>
+      </div>
+  
+      <div class="catalog-card">
+        <img src="https://via.placeholder.com/300x200?text=Decorador+Interior" alt="Decorador de Interiores">
+        <h3>Decorador de Interiores</h3>
+        <p>Asesoría personalizada para renovar espacios con estilo.</p>
+        <p><strong>$70.00</strong></p>
+      </div>
+    </div>
+  </section>
+<section id="blog">
+    <h2>Blog / Publicaciones Populares</h2>
+    <br>
+    <div class="blog-cards">
+      <div class="blog-card">
+        <img src="https://via.placeholder.com/300x200?text=Noticia+1" alt="Noticia 1">
+        <h3>Consejos de Limpieza</h3>
+        <p>Aprende trucos fáciles para mantener tu hogar limpio con menos esfuerzo.</p>
+      </div>
+  
+      <div class="blog-card">
+        <img src="https://via.placeholder.com/300x200?text=Noticia+2" alt="Noticia 2">
+        <h3>Organización del Hogar</h3>
+        <p>Ideas para mantener tu hogar ordenado y funcional cada día.</p>
+      </div>
+  
+<div class="blog-card">
+        <img src="https://via.placeholder.com/300x200?text=Noticia+3" alt="Noticia 3">
+        <h3>Tendencias en Decoración</h3>
+        <p>Descubre las últimas tendencias para decorar tu casa este año.</p>
+      </div>
+    </div>
+    <button id="ver-mas">Ver más publicaciones</button>
+  </section>
+  <section id="areas">
+    <h2>Áreas de Productos de Limpieza</h2>
+    <img src="imagen/10.png" alt="">
+    <img src="imagen/2.png" alt="">
+    <img src="imagen/4.png" alt="">
+    <img src="imagen/6.png" alt="">
+    <img src="imagen/3.png" alt="">
+    <img src="imagen/10.png" alt="">
+    <img src="imagen/2.png" alt="">
+    <img src="imagen/4.png" alt="">
+    <img src="imagen/6.png" alt="">
+    <img src="imagen/3.png" alt="">
+    <p class="subtitulo">Explora nuestras categorías de productos diseñados para cada espacio de tu hogar o negocio.</p>
+    <div class="areas-grid">
+      <div class="area-card">
+        <img src="https://via.placeholder.com/300x200?text=Baño" alt="Baño">
+        <h3>Baño</h3>
+        <p>Desinfectantes, limpiadores y accesorios para mantener tu baño impecable.</p>
+ </div>
+  
+      <div class="area-card">
+        <img src="https://via.placeholder.com/300x200?text=Cocina" alt="Cocina">
+        <h3>Cocina</h3>
+        <p>Detergentes, desengrasantes y soluciones para una cocina higiénica.</p>
+      </div>
+  
+      <div class="area-card">
+        <img src="https://via.placeholder.com/300x200?text=Oficina" alt="Oficina">
+        <h3>Oficina</h3>
+        <p>Productos especializados para limpieza de escritorios, equipos y salas.</p>
+      </div>
+  
+      <div class="area-card">
+        <img src="https://via.placeholder.com/300x200?text=Jardín" alt="Jardín">
+        <h3>Jardín</h3>
+        <p>Insumos para mantener áreas verdes y exteriores siempre frescos y limpios.</p>
+      </div>
+    </div>
+  </section>
+  <section id="consejos">
+    <h2>Consejos para el Hogar</h2>
+    <input type="text" class="buscador-seccion" placeholder="Buscar consejos...">
+ <div class="catalogo">
+      <div class="catalog-card">
+        <h3>Ahorro de Energía</h3>
+        <p>Desconecta los aparatos que no uses y utiliza focos LED para reducir la factura eléctrica.</p>
+      </div>
+  
+      <div class="catalog-card">
+        <h3>Decoración Económica</h3>
+        <p>Usa plantas naturales y luz cálida para dar un toque acogedor sin gastar demasiado.</p>
+      </div>
+  
+      <div class="catalog-card">
+        <h3>Organización de la Cocina</h3>
+        <p>Clasifica los utensilios por uso diario y semanal; así ahorrarás tiempo al cocinar.</p>
+      </div>
+  
+      <div class="catalog-card">
+        <h3>Mantenimiento del Refrigerador</h3>
+        <p>Limpia las bobinas traseras cada seis meses para mejorar la eficiencia energética.</p>
+      </div>
+    </div>
+  </section>
+<section id="noticias">
+    <h2>Últimas Noticias</h2>
+    <div class="noticias-catalogo">
+        <div class="noticia-card">
+            <h3>Noticia 1: Innovación en el Hogar</h3>
+            <p>Descubre las últimas tendencias tecnológicas que mejoran tu calidad de vida.</p>
+        </div>
+
+        <div class="noticia-card">
+            <h3>Noticia 2: Consejos de Seguridad</h3>
+            <p>¿Cómo mantener tu hogar seguro en tiempos de crisis? Lee nuestros consejos prácticos.</p>
+        </div>
+
+        <div class="noticia-card">
+            <h3>Noticia 3: Nuevas Leyes para el Hogar</h3>
+            <p>Entérate de las nuevas leyes que afectan las reformas y construcciones en tu casa.</p>
+        </div>
+<div class="noticia-card">
+            <h3>Noticia 4: Productos Ecológicos</h3>
+            <p>Los productos ecológicos siguen ganando terreno en el mercado del hogar. Descubre por qué.</p>
+        </div>
+    </div>
+</section>
+<section id="Eventos">
+  <h2>Próximos Eventos</h2>
+  <br>
+  <div class="eventos-cards">
+    <div class="evento-card">
+      <div class="evento-fecha">
+        <span class="dia">25</span>
+        <span class="mes">SEP</span>
+      </div>
+      <div class="evento-info">
+        <h3>Feria del Hogar</h3>
+        <p>Exposición de productos de limpieza y decoración para el hogar.</p>
+        <p><strong>Ubicación:</strong> Centro de Convenciones</p>
+      </div>
+    </div>
+ <div class="evento-card">
+      <div class="evento-fecha">
+        <span class="dia">10</span>
+        <span class="mes">OCT</span>
+      </div>
+      <div class="evento-info">
+        <h3>Promoción Especial</h3>
+        <p>Evento con descuentos exclusivos en productos de cocina.</p>
+        <p><strong>Ubicación:</strong> Tienda Principal</p>
+      </div>
+    </div>
+<div class="evento-card">
+      <div class="evento-fecha">
+        <span class="dia">15</span>
+        <span class="mes">NOV</span>
+      </div>
+      <div class="evento-info">
+        <h3>Taller de Organización</h3>
+        <p>Aprende consejos prácticos para organizar tu hogar.</p>
+        <p><strong>Ubicación:</strong> Sala de Conferencias</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Publicaciones -->
+<section id="publicaciones">
+  <h2>Publicaciones</h2>
+  <br>
+  <div class="catalogo">
+    <div class="catalog-card">
+      <img src="https://via.placeholder.com/300x200?text=Consejos+Limpieza" alt="Consejo Limpieza">
+      <h3>Consejos de Limpieza</h3>
+      <p>Aprende trucos fáciles para mantener tu hogar limpio con menos esfuerzo.</p>
+      <p><strong>Gratis</strong></p>
+    </div>
+    <div class="catalog-card">
+      <img src="https://via.placeholder.com/300x200?text=Novedades" alt="Novedades">
+      <h3>Novedades del Hogar</h3>
+      <p>Conoce las últimas tendencias en organización y mantenimiento.</p>
+<p><strong>Nuevo</strong></p>
+    </div>
+  </div>
+</section>
+<!-- Aliados con carrusel -->
+<section id="aliados">
+  <h2>Aliados</h2>
+  <br>
+  <div class="carrusel-container">
+    <button class="carrusel-btn prev">&#10094;</button>
+    <div class="carrusel">
+      <div class="catalog-card">
+        <img src="https://via.placeholder.com/300x200?text=Aliado+1" alt="Aliado 1">
+        <h3>Aliado 1</h3>
+        <p>Empresa asociada que nos apoya en servicios de limpieza y mantenimiento.</p>
+        <p><strong>+ Info</strong></p>
+      </div>
+
+      <div class="catalog-card">
+        <img src="https://via.placeholder.com/300x200?text=Aliado+2" alt="Aliado 2">
+        <h3>Aliado 2</h3>
+        <p>Marca de confianza en productos de cocina y decoración del hogar.</p>
+        <p><strong>+ Info</strong></p>
+      </div>
+ <div class="catalog-card">
+        <img src="https://via.placeholder.com/300x200?text=Aliado+3" alt="Aliado 3">
+        <h3>Aliado 3</h3>
+        <p>Proveedor oficial de insumos de limpieza industrial.</p>
+        <p><strong>+ Info</strong></p>
+      </div>
+
+      <div class="catalog-card">
+        <img src="https://via.placeholder.com/300x200?text=Aliado+4" alt="Aliado 4">
+        <h3>Aliado 4</h3>
+        <p>Empresa líder en servicios de mantenimiento de oficinas.</p>
+        <p><strong>+ Info</strong></p>
+      </div>
+    </div>
+    <button class="carrusel-btn next">&#10095;</button>
+  </div>
+</section>
+<section id="promociones">
+  <h2>Promociones</h2>
+  <input type="text" class="buscador-seccion" placeholder="Buscar en promociones...">
+
+  <div class="catalogo">
+    <div class="catalog-card">
+      <img src="https://via.placeholder.com/300x200?text=Promo+1" alt="Promoción 1">
+      <h3>Descuento en Limpieza</h3>
+      <p>Aprovecha un 20% de descuento en productos de limpieza seleccionados.</p>
+      <p><strong>¡Oferta Limitada!</strong></p>
+    </div>
+
+ <div class="catalog-card">
+      <img src="https://via.placeholder.com/300x200?text=Promo+2" alt="Promoción 2">
+      <h3>2x1 en Cocina</h3>
+      <p>Llévate dos productos de cocina al precio de uno.</p>
+      <p><strong>2x1</strong></p>
+    </div>
+
+    <div class="catalog-card">
+      <img src="https://via.placeholder.com/300x200?text=Promo+3" alt="Promoción 3">
+      <h3>Ofertas de Temporada</h3>
+      <p>Descuentos especiales en artículos para el hogar durante este mes.</p>
+      <p><strong>Hasta -40%</strong></p>
+    </div>
+  </div>
+</section>
+<!-- Enlaces de Interés -->
+<section id="interes">
+  <h2>Enlaces de Interés</h2>
+  <input type="text" class="buscador-seccion" placeholder="Buscar enlaces...">
+
+<div class="catalogo">
+    <div class="catalog-card">
+      <img src="https://via.placeholder.com/300x200?text=Guia+Limpieza" alt="Guía de limpieza">
+      <h3>Guía de Limpieza</h3>
+      <p>Accede a guías descargables con consejos para el cuidado del hogar.</p>
+      <p><strong>PDF</strong></p>
+    </div>
+    <div class="catalog-card">
+      <img src="https://via.placeholder.com/300x200?text=Recursos" alt="Recursos útiles">
+      <h3>Recursos Útiles</h3>
+      <p>Encuentra páginas recomendadas con tips de decoración y mantenimiento.</p>
+      <p><strong>Externo</strong></p>
+    </div>
+  </div>
+</section>
+<!-- Convocatorias -->
+<section id="convocatorias">
+  <h2>Convocatorias</h2>
+  <div class="catalogo">
+    <div class="catalog-card convocatoria-card">
+      <img src="https://via.placeholder.com/300x200?text=Convocatoria+1" alt="Convocatoria 1">
+      <h3>Voluntariado</h3>
+      <p>Únete como voluntario en nuestras actividades comunitarias.</p>
+    </div>
+
+ <div class="catalog-card convocatoria-card">
+      <img src="https://via.placeholder.com/300x200?text=Convocatoria+2" alt="Convocatoria 2">
+      <h3>Convocatoria Abierta</h3>
+      <p>Buscamos aliados para nuevos proyectos sociales.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Datos -->
+<section id="datos">
+  <h2>Datos</h2>
+  <div class="catalogo">
+    <div class="catalog-card dato-card">
+      <img src="https://via.placeholder.com/300x200?text=Dato+1" alt="Dato 1">
+      <h3>Dato Curioso</h3>
+      <p>El 70% de los hogares usan productos de limpieza ecológicos.</p>
+    </div>
+
+    <div class="catalog-card dato-card">
+      <img src="https://via.placeholder.com/300x200?text=Dato+2" alt="Dato 2">
+      <h3>Dato Interesante</h3>
+      <p>El uso de desinfectantes aumentó un 30% en los últimos años.</p>
+    </div>
+  </div>
+</section>
+<!-- Beneficios -->
+<section id="beneficios">
+  <h2>Beneficios</h2>
+  <div class="catalogo">
+    <div class="catalog-card beneficio-card">
+      <img src="https://via.placeholder.com/300x200?text=Beneficio+1" alt="Beneficio 1">
+      <h3>Descuentos</h3>
+      <p>Accede a descuentos exclusivos como miembro registrado.</p>
+    </div>
+
+ <div class="catalog-card beneficio-card">
+      <img src="https://via.placeholder.com/300x200?text=Beneficio+2" alt="Beneficio 2">
+      <h3>Promociones</h3>
+      <p>Disfruta de promociones especiales en productos seleccionados.</p>
+    </div>
+  </div>
+</section>
+<footer>
+  <h2>Para mas informacion:</h2>
+  <div class="footer-container">
+    <!-- Información de contacto y registro -->
+    <div class="contact-info">
+      <h3>Información de Contacto</h3>
+      <p><strong>Correo:</strong> info@HomeMarket.com</p>
+      <p><strong>Dirección:</strong> Calle Ficticia 123, Ciudad, País</p>
+      <p><strong>Teléfono:</strong> +503 456 7890</p>
+      <p><strong>Registro Ministerio de Educación:</strong> 12345-6789</p>
+    </div>
+<!-- Enlaces de redes sociales -->
+    <div class="social-links">
+      <h3>Redes Sociales</h3>
+      <a href="https://www.whatsapp.com" target="_blank">
+        <img src="" alt="WhatsApp">
+      </a>
+      <a href="https://www.facebook.com" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram">
+      </a>
+      <a href="https://www.tiktok.com" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/TikTok_logo_2021.svg" alt="Tiktok">
+      </a>
+    </div>
+<!-- Links de descarga -->
+    <div class="download-links">
+      <h3>Descargar la App</h3>
+      <a href="https://play.google.com/store" target="_blank">
+        <img src="imagen/4.png" alt="Google Play">
+      </a>
+      <a href="https://apps.apple.com" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_logo.svg" alt="App Store">
+      </a>
+    </div>
+  </div>
+  <br><br><br><br>
+<!-- Menú Inferior -->
+  <nav class="navbar">
+    <a data-section="noticias">Noticias</a>
+    <a data-section="convocatorias">Convocatorias</a>
+    <a data-section="datos">Datos</a>
+    <a data-section="beneficios">Beneficios</a>
+  </nav>
+
+
+
+    <script src="js/app.js"></script>
+</body>
+</html>
