@@ -117,17 +117,6 @@ document.querySelectorAll('.buscador-seccion').forEach(input => {
       });
     });
   });
-  /* ==== CARRUSEL AUTOMÁTICO ==== */
-let slideIndex = 0;
-function showSlides() {
-  const slides = document.querySelectorAll(".slides");
-  slides.forEach(s => s.style.display = "none");
-  slideIndex++;
-  if (slideIndex > slides.length) slideIndex = 1;
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 4000); // 4 segundos por slide
-}
-showSlides();
 /* ==== AGREGAR PRODUCTO AL CARRITO ====
    (El código de agregar ya está implementado arriba en btn-agregar) */
 
@@ -185,7 +174,35 @@ document.getElementById('searchForm').addEventListener('submit', function(e){
     console.log("Buscando:", query);
   });
 
+// Botón hamburguesa
+const menuToggle = document.getElementById('menu-toggle');
+const nav = document.getElementById('navbar');
 
+menuToggle.addEventListener('click', () => {
+  navbar.classList.toggle('active'); // Muestra/oculta menú
+});
 
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const indicators = document.querySelector('.indicators');
+let currentIndex = 0;
 
-  
+// Crear indicadores
+slides.forEach((_, i) => {
+  const dot = document.createElement('div');
+  dot.classList.add('indicator');
+  if (i === 0) dot.classList.add('active');
+  indicators.appendChild(dot);
+});
+const dots = Array.from(document.querySelectorAll('.indicator'));
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[currentIndex].classList.add('active');
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateCarousel();
+}

@@ -2481,110 +2481,203 @@ section h2 {
   box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
 
+/* --- HAMBURGUESA --- */
+.menu-toggle {
+  display: none; /* Oculto en escritorio */
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
-/* ==== CARRUSEL ==== */
-.carousel-slide {
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .navbar {
+    display: none; /* Oculto por defecto en móvil */
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+  }
+
+  .navbar.active {
+    display: flex; /* Se muestra cuando está activo */
+  }
+
+  .menu-toggle {
+    display: block; /* Botón visible en móvil */
+  }
+
+  .submenu-content {
+    position: relative; /* Que no se salga de la pantalla */
+    box-shadow: none;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; /* separa logo y buscador */
+  align-items: center; /* centra verticalmente */
+  background-color: #4b25c7; /* color de fondo, cámbialo a tu gusto */
+  padding: 15px 208px; /* aumenta espacio interno */
+  height: 160px; /* altura fija (puedes ajustar 80 → 100px si lo quieres más grande) */
+  box-sizing: border-box;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px; /* ajusta el tamaño del logo */
+  margin-right: 10px;
+}
+
+.logo-text {
+  color: white;
+  font-size: 24px; /* texto más grande */
+  margin: 0;
+}
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.search-wrap input {
+  padding: 8px 12px;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.search-wrap button {
+  padding: 8px 15px;
+  background: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Selecciona tu buscador por id o clase */
+#searchInput {
+  margin-top: 60px; /* Ajusta la distancia hacia abajo */
+}
+
+/* O si tu buscador está dentro de un contenedor */
+.search-wrap {
+  margin-top: 50px; /* Espacio desde el elemento de arriba */
+}
+
+.search-wrap {
+  display: flex;             /* Poner input y botón en fila */
+  align-items: center;       /* Alinear verticalmente */
+  margin-top: 60px;          /* Ajusta la altura desde arriba */
+  gap: 7px;                 /* Espacio entre input y botón */
+}
+
+#searchInput {
+  padding: 8px 12px;
+  font-size: 16px;
+}
+
+#searchBtn {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;   /* Alinea verticalmente el logo y el texto */
+  gap: 10px;             /* Espacio entre logo y texto */
+  margin-top: 30px;      /* Ajusta esta distancia para bajarlo */
+}
+
+.logo {
+  height: 50px;          /* Mantén el tamaño del logo */
+}
+
+.logo-text {
+  font-size: 24px;
+  margin: 0;             /* Elimina margen extra si hay */
+}
+
+
+/* 1. Estilo para el contenedor padre */
+.contenedor-busqueda {
+  display: flex; /* Habilita el modo flexbox */
+  align-items: center; /* Centra verticalmente los elementos */
+  gap: 5px; /* Establece un espacio muy pequeño entre los elementos hijos */
+  /* Ajusta el ancho según necesites */
+}
+
+/* 2. Estilo para el campo de texto de búsqueda */
+.campo-busqueda {
+  /* Puedes ajustar el ancho para que el campo de texto ocupe más espacio */
+  flex-grow: 1; 
+  /* Asegúrate de que no haya margen externo que los separe */
+  margin: 0; 
+}
+
+/* 3. Estilo para el botón de búsqueda */
+.boton-busqueda {
+  /* Asegúrate de que no haya margen externo que los separe */
+  margin: 0; 
+}
+
+
+
+.carousel {
   position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin: 40px auto;
+  width: 700px;   /* ancho fijo */
+  height: 400px;  /* alto fijo */
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 }
 
-.carousel-slide img.imageSlide {
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+.slide img {
   width: 100%;
-  display: block;
+  height: 100%;
+  object-fit: cover; /* para que la imagen no se deforme */
   border-radius: 12px;
 }
 
-.content-slide {
+/* Indicadores */
+.indicators {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-  padding: 15px 20px;
-  border-radius: 8px;
-  max-width: 70%;
-}
-
-.content-slide .content-title {
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-
-.content-slide .content-text {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.content-slide .content-btn {
-  padding: 8px 15px;
-  background: #ffcc00;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.content-slide .content-btn:hover {
-  background: #f0b700;
-}
-
-/* ==== BOTONES DE NAVEGACIÓN ==== */
-.navegation {
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
-  margin-top: 15px;
-  gap: 10px;
+  gap: 8px;
 }
 
-.btn-nav {
+.indicator {
   width: 12px;
   height: 12px;
-  background: #ccc;
+  background: rgba(255,255,255,0.5);
   border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s;
 }
 
-.btn-nav.active {
-  background: #0d4b91;
-  transform: scale(1.3);
-}
-
-/* ==== CONTENEDOR DEL TEXTO CENTRADO ==== */
-.content-slide {
-  position: absolute;
-  top: 50%;              /* Centra vertical */
-  left: 50%;             /* Centra horizontal */
-  transform: translate(-50%, -50%);  /* Ajuste exacto */
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-  padding: 20px 25px;
-  border-radius: 12px;
-  text-align: center;    /* Centra el texto dentro del div */
-  max-width: 70%;
-}
-
-/* ==== BOTÓN DEL SLIDE ==== */
-.content-slide .content-btn {
-  padding: 10px 20px;
-  background: #ffcc00;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-/* Efecto hover: cambia de color y se levanta */
-.content-slide .content-btn:hover {
-  background: #f0b700;
-  color: #000;
-  transform: translateY(-4px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+.indicator.active {
+  background: white;
 }
