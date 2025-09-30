@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Productos para Jardín</title>
+  <link rel="stylesheet" href="css/areas.css" />
+  <link rel="stylesheet" href="pagina.html">
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div class="top-bar">
+    <div class="top-links">
+      <a href="#">Ayuda</a>
+      <a href="#">Mi Cuenta</a>
+      <a href="#">Ofertas</a>
+      <a href="#">Soporte</a>
+    </div>
+  </div>
+
+  <!-- Flecha de regreso -->
+  <a href="pagina.html" class="btn-flecha-regresar" title="Volver al catálogo">
+    ← Volver al catálogo
+  </a>
+
+  <!-- Producto 1 -->
+  <main class="detalle-producto">
+    <img src="https://via.placeholder.com/400x300?text=Fertilizante" alt="Fertilizante orgánico para jardín" />
+    <div class="info">
+      <h1>Fertilizante Orgánico</h1>
+      <p class="precio">$15.00</p>
+      <button class="btn-agregar" data-nombre="Fertilizante Orgánico" data-precio="15.00">Agregar al carrito</button>
+      <h3>Descripción</h3>
+      <p>Mejora el crecimiento de plantas y césped con este fertilizante 100% natural.</p>
+      <ul>
+        <li>Contenido: 2 kg</li>
+        <li>Apto para plantas comestibles y ornamentales</li>
+        <li>Sin químicos tóxicos</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Producto 2 -->
+  <main class="detalle-producto">
+    <img src="https://via.placeholder.com/400x300?text=Regadera" alt="Regadera metálica para jardín" />
+    <div class="info">
+      <h1>Regadera Metálica</h1>
+      <p class="precio">$12.99</p>
+      <button class="btn-agregar" data-nombre="Regadera Metálica" data-precio="12.99">Agregar al carrito</button>
+      <h3>Descripción</h3>
+      <p>Clásica regadera con boquilla desmontable para riego suave o dirigido.</p>
+      <ul>
+        <li>Capacidad: 1.5 L</li>
+        <li>Material: Acero galvanizado</li>
+        <li>Anticorrosiva</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Producto 3 -->
+  <main class="detalle-producto">
+    <img src="https://via.placeholder.com/400x300?text=Guantes+Jardin" alt="Guantes de jardinería" />
+    <div class="info">
+      <h1>Guantes de Jardinería</h1>
+      <p class="precio">$6.50</p>
+      <button class="btn-agregar" data-nombre="Guantes de Jardinería" data-precio="6.50">Agregar al carrito</button>
+      <h3>Descripción</h3>
+      <p>Protege tus manos mientras trabajas en el jardín con estos resistentes guantes.</p>
+      <ul>
+        <li>Material: Tela reforzada con látex</li>
+        <li>Talla única</li>
+        <li>Antideslizantes</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
+
+<script>
+  document.querySelectorAll('.btn-agregar').forEach(boton => {
+    boton.addEventListener('click', () => {
+      const nombre = boton.getAttribute('data-nombre');
+      const precio = parseFloat(boton.getAttribute('data-precio'));
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push({ nombre, precio });
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+    });
+  });
+</script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mantenimiento de Cocina</title>
+  <link rel="stylesheet" href="css/servicios.css">
+  <link rel="stylesheet" href="pagina.html">
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="top-links">
+      <a href="#">Ayuda</a>
+      <a href="#">Mi Cuenta</a>
+      <a href="#">Ofertas</a>
+      <a href="#">Soporte</a>
+    </div>
+
+    <a href="pagina.html" class="btn-flecha-regresar" title="Volver al catalogo">
+      ← Volver al catálogo
+    </a>
+
+  <main class="detalle-producto">
+    <img src="https://via.placeholder.com/300x200?text=Mantenimiento+Cocina" alt="Mantenimiento de Cocina">
+    <div class="info">
+      <h1>Mantenimiento de Cocina</h1>
+      <p class="precio">$30.00</p>
+      <button class="btn-agregar" data-nombre="Mantenimiento de Cocina" data-precio="30.00">Agregar al carrito</button> 
+
+      <h3>Descripción</h3>
+      <p>Limpieza, revisión y calibración de estufas, hornos, campanas extractoras y más.</p>
+
+      <h3>Detalles específicos</h3>
+      <ul>
+        <li>Incluye limpieza profunda</li>
+        <li>Chequeo de seguridad y funcionamiento</li>
+        <li>Uso de productos no tóxicos</li>
+        <li>Duración aproximada: 45 minutos</li>
+      </ul>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll('.btn-agregar').forEach(boton => {
+      boton.addEventListener('click', () => {
+        const nombre = boton.getAttribute('data-nombre');
+        const precio = parseFloat(boton.getAttribute('data-precio'));
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        carrito.push({ nombre, precio });
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+/* General */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+/* Top Bar */
+.top-bar {
+  background-color: #333;
+  padding: 10px 20px;
+  text-align: right;
+}
+
+.top-bar .top-links a {
+  color: rgb(216, 22, 22);
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.top-bar .top-links a:hover {
+  text-decoration: underline;
+}
+
+/* Flecha de regreso */
+.btn-flecha-regresar {
+  display: inline-block;
+  margin: 20px;
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.btn-flecha-regresar:hover {
+  color: #007BFF;
+}
+
+/* Estilo para sección de producto */
+.detalle-producto {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+}
+
+.detalle-producto img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.detalle-producto img:hover {
+  transform: scale(1.05);
+}
+
+.info {
+  max-width: 500px;
+}
+
+.info h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.precio {
+  font-size: 20px;
+  color: #28a745;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.info ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+/* Botón agregar al carrito */
+.btn-agregar {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-agregar:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .detalle-producto {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .info {
+    text-align: center;
+  }
+
+  .btn-flecha-regresar {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+  }
+}
+  /* Barra superior */
+.top-bar {
+    background-color: #f5f5f5; /* Color de fondo suave */
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+  }
+  
+  /* Contenedor de enlaces */
+  .top-links {
+    display: flex;
+    justify-content: flex-end; /* Alinea a la derecha */
+    gap: 20px; /* Espacio entre enlaces */
+  }
+  
+  /* Estilos para los enlaces */
+  .top-links a {
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .top-links a:hover {
+    color: #007bff; /* Color al pasar el mouse */
+  }
+  
+  /* Subrayado animado al pasar el mouse */
+  .top-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -2px;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+  }
+  
+  .top-links a:hover::after {
+    width: 100%;
+  }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Limpiador Multiusos</title>
+  <link rel="stylesheet" href="css/produtos.css">
+  <link rel="stylesheet" href="index.html">
+</head>
+<body>
+  <div class="top-bar">
+    <div class="top-links">
+      <a href="#">Ayuda</a>
+      <a href="#">Mi Cuenta</a>
+      <a href="#">Ofertas</a>
+      <a href="#">Soporte</a>
+    </div>
+  </div>
+  <a href="pagina.html" class="btn-flecha-regresar" title="Volver al catalogo">
+    ← Volver al catálogo
+  </a>
+
+  <main class="detalle-producto">
+    <img src="imagen/limpiador-multiusos.png" alt="Limpiador Multiusos">
+    <div class="info">
+      <h1>Limpiador Multiusos</h1>
+      <p class="precio">$12.00</p>
+      <button class="btn-agregar" data-nombre="Limpiador Multiusos" data-precio="80.00">Agregar al carrito</button>
+
+      <h3>Descripción</h3>
+      <p>Limpiador multiusos con fórmula concentrada para eliminar grasa y suciedad en cualquier superficie.</p>
+
+      <h3>Detalles específicos</h3>
+      <ul>
+        <li>Contenido: 1 litro</li>
+        <li>Aroma fresco y duradero</li>
+        <li>Biodegradable y seguro para el hogar</li>
+        <li>Ideal para pisos, azulejos, cocina y baño</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
+
+<script>
+  // Seleccionamos todos los botones con la clase 'btn-agregar'
+  document.querySelectorAll('.btn-agregar').forEach(boton => {
+    boton.addEventListener('click', () => {
+      const nombre = boton.getAttribute('data-nombre');
+      const precio = parseFloat(boton.getAttribute('data-precio'));
+
+      // Obtener carrito actual o crear uno nuevo
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+      // Agregar producto al carrito
+      carrito.push({ nombre, precio });
+
+      // Guardar carrito actualizado en localStorage
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+    });
+  });
+</script>

@@ -1,0 +1,47 @@
+<!-- promociones2.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Combo Guantes y Esponjas</title>
+  <link rel="stylesheet" href="css/promociones.css" />
+  <link rel="stylesheet" href="pagina.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="top-links">
+          <a href="#">Ayuda</a>
+          <a href="#">Mi Cuenta</a>
+          <a href="#">Ofertas</a>
+          <a href="#">Soporte</a>
+        </div>
+      </div>
+  <a href="pagina.html" class="btn-flecha-regresar">← Volver al catálogo</a>
+
+  <main class="detalle-producto">
+    <img src="https://via.placeholder.com/300x200?text=Promo+4" alt="Combo de Guantes y Esponjas">
+    <div class="info">
+      <h1>Combo de Guantes y Esponjas</h1>
+      <p class="precio">$12.00</p>
+      <button class="btn-agregar" data-nombre="Combo de Guantes y Esponjas" data-precio="12.00">Agregar al carrito</button>
+
+      <h3>Descripción</h3>
+      <p>
+        Este combo es perfecto para quienes buscan practicidad y eficiencia en la limpieza del hogar. Incluye un par de guantes resistentes al desgaste y un set de esponjas dobles (abrasiva y suave) para múltiples superficies. ¡Limpieza sin dañar tus manos!
+      </p>
+    </div>
+  </main>
+
+  <script>
+    document.querySelector(".btn-agregar").addEventListener("click", () => {
+      const nombre = "Combo de Guantes y Esponjas";
+      const precio = 12.00;
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      carrito.push({ nombre, precio });
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+    });
+  </script>
+</body>
+</html>

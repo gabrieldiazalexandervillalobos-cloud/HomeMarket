@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Productos para Oficina</title>
+  <link rel="stylesheet" href="css/areas.css" />
+  <link rel="stylesheet" href="pagina.html">
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div class="top-bar">
+    <div class="top-links">
+      <a href="#">Ayuda</a>
+      <a href="#">Mi Cuenta</a>
+      <a href="#">Ofertas</a>
+      <a href="#">Soporte</a>
+    </div>
+  </div>
+
+  <!-- Botón de regreso -->
+  <a href="pagina.html" class="btn-flecha-regresar" title="Volver al catálogo">
+    ← Volver al catálogo
+  </a>
+
+  <!-- Producto 1 -->
+  <main class="detalle-producto">
+    <img src="https://via.placeholder.com/400x300?text=Limpiador+Pantallas" alt="Limpiador de pantallas" />
+    <div class="info">
+      <h1>Limpiador para Pantallas</h1>
+      <p class="precio">$9.00</p>
+      <button class="btn-agregar" data-nombre="Limpiador para Pantallas" data-precio="9.00">Agregar al carrito</button>
+      <h3>Descripción</h3>
+      <p>Solución suave pero efectiva para limpiar pantallas de computadoras, laptops y monitores.</p>
+      <ul>
+        <li>Contenido: 250ml</li>
+        <li>Incluye paño de microfibra</li>
+        <li>No deja residuos ni rayas</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Producto 2 -->
+  <main class="detalle-producto">
+    <img src="https://via.placeholder.com/400x300?text=Toallas+Humedas" alt="Toallitas húmedas para oficina" />
+    <div class="info">
+      <h1>Toallitas Antibacteriales</h1>
+      <p class="precio">$4.50</p>
+      <button class="btn-agregar" data-nombre="Toallitas Antibacteriales" data-precio="4.50">Agregar al carrito</button>
+      <h3>Descripción</h3>
+      <p>Perfectas para limpiar escritorios, teléfonos, teclados y otras superficies comunes.</p>
+      <ul>
+        <li>Paquete con 50 toallitas</li>
+        <li>Eliminan el 99.9% de bacterias</li>
+        <li>Aroma fresco</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Producto 3 -->
+  <main class="detalle-producto">
+    <img src="https://via.placeholder.com/400x300?text=Aromatizante" alt="Aromatizante para oficina" />
+    <div class="info">
+      <h1>Aromatizante Ambiental</h1>
+      <p class="precio">$6.25</p>
+      <button class="btn-agregar" data-nombre="Aromatizante Ambiental" data-precio="6.25">Agregar al carrito</button>
+      <h3>Descripción</h3>
+      <p>Mantén tu oficina con un aroma agradable durante todo el día. Ideal para espacios cerrados.</p>
+      <ul>
+        <li>Fragancia: Lavanda</li>
+        <li>Contenido: 300ml</li>
+        <li>Duración prolongada</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
+
+<script>
+  document.querySelectorAll('.btn-agregar').forEach(boton => {
+    boton.addEventListener('click', () => {
+      const nombre = boton.getAttribute('data-nombre');
+      const precio = parseFloat(boton.getAttribute('data-precio'));
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push({ nombre, precio });
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+    });
+  });
+</script>

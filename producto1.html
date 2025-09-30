@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de Sartenes</title>
+  <link rel="stylesheet" href="css/produtos.css">
+  <link rel="stylesheet" href="index.html">
+</head>
+<body>
+  
+  <div class="top-bar">
+    <div class="top-links">
+      <a href="#">Ayuda</a>
+      <a href="#">Mi Cuenta</a>
+      <a href="#">Ofertas</a>
+      <a href="#">Soporte</a>
+    </div>
+  </div>
+  
+  <a href="pagina.html" class="btn-flecha-regresar" title="Volver al catalogo">
+    ← Volver al catálogo
+  </a>
+
+  <main class="detalle-producto">
+    <img src="imagen/4.png" alt="Juego de Sartenes">
+    <div class="info">
+      <h1>Juego de Sartenes</h1>
+      <p class="precio">$25.00</p>
+      <button class="btn-agregar" data-nombre="Juego de Sartenes" data-precio="80.00">Agregar al carrito</button> 
+
+      <h3>Descripción</h3>
+      <p>Juego de sartenes antiadherentes para cocinar de manera saludable.</p>
+
+      <h3>Detalles específicos</h3>
+      <ul>
+        <li>Material: Aluminio con recubrimiento antiadherente</li>
+        <li>Tamaño: 20 cm, 24 cm y 28 cm</li>
+        <li>Apto para inducción y gas</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
+<script>
+  // Seleccionamos todos los botones con la clase 'btn-agregar'
+  document.querySelectorAll('.btn-agregar').forEach(boton => {
+    boton.addEventListener('click', () => {
+      const nombre = boton.getAttribute('data-nombre');
+      const precio = parseFloat(boton.getAttribute('data-precio'));
+
+      // Obtener carrito actual o crear uno nuevo
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+      // Agregar producto al carrito
+      carrito.push({ nombre, precio });
+
+      // Guardar carrito actualizado en localStorage
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.getElementById('navbar');
+  const links = navbar.querySelectorAll('[data-section]');
+  const submenuBtn = navbar.querySelector('.submenu-btn');
+  const submenuContent = navbar.querySelector('.submenu-content');
+
+  // Manejar clics en enlaces con data-section
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const targetId = link.getAttribute('data-section');
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+        // Quitar clase active a todos los enlaces
+        links.forEach(l => l.classList.remove('active'));
+        // Poner active al clickeado
+        link.classList.add('active');
+
+        // Cerrar submenu si estaba abierto
+        if (submenuContent) {
+          submenuContent.style.display = 'none';
+        }
+
+        // Scroll suave
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Toggle para el submenu "Servicios"
+  if (submenuBtn && submenuContent) {
+    submenuBtn.addEventListener('click', () => {
+      if (submenuContent.style.display === 'block') {
+        submenuContent.style.display = 'none';
+      } else {
+        submenuContent.style.display = 'block';
+      }
+    });
+
+    // Opcional: cerrar submenu al hacer click fuera
+    document.addEventListener('click', (e) => {
+      if (!submenuBtn.contains(e.target) && !submenuContent.contains(e.target)) {
+        submenuContent.style.display = 'none';
+      }
+    });
+  }
+});

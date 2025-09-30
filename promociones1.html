@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kit de Limpieza Avanzado</title>
+  <link rel="stylesheet" href="css/promociones.css" />
+  <link rel="stylesheet" href="pagina.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="top-links">
+          <a href="#">Ayuda</a>
+          <a href="#">Mi Cuenta</a>
+          <a href="#">Ofertas</a>
+          <a href="#">Soporte</a>
+        </div>
+  <a href="pagina.html" class="btn-flecha-regresar">← Volver al catálogo</a>
+
+  <main class="detalle-producto">
+    <img src="https://via.placeholder.com/300x200?text=Promo+1" alt="Kit de limpieza avanzado">
+    <div class="info">
+      <h1>Kit de Limpieza Avanzado</h1>
+      <p class="precio">$25.00</p>
+      <button class="btn-agregar" data-nombre="Kit de Limpieza Avanzado" data-precio="25.00">Agregar al carrito</button>
+
+      <h3>Descripción</h3>
+      <p>
+        El Kit de Limpieza Avanzado es ideal para mantener tu hogar impecable con productos de alta calidad. Incluye limpiadores multiusos, guantes resistentes, y paños de microfibra. Todo lo que necesitas en un solo paquete para una limpieza profunda y efectiva.
+      </p>
+    </div>
+  </main>
+
+  <script>
+    document.querySelector(".btn-agregar").addEventListener("click", () => {
+      const nombre = "Kit de Limpieza Avanzado";
+      const precio = 25.00;
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      carrito.push({ nombre, precio });
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+    });
+  </script>
+</body>
+</html>

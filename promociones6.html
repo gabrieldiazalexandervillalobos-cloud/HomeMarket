@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Desinfectante Multiusos</title>
+  <link rel="stylesheet" href="css/promociones.css" />
+  <link rel="stylesheet" href="pagina.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <div class="top-bar">
+    <div class="top-links">
+      <a href="#">Ayuda</a>
+      <a href="#">Mi Cuenta</a>
+      <a href="#">Ofertas</a>
+      <a href="#">Soporte</a>
+    </div>
+  </div>
+  <a href="pagina.html" class="btn-flecha-regresar">← Volver al catálogo</a>
+
+  <main class="detalle-producto">
+    <img src="https://via.placeholder.com/300x200?text=Promo+7" alt="Desinfectantes en Oferta">
+    <div class="info">
+      <h1>Desinfectante Multiusos</h1>
+      <p class="precio">$5.00</p>
+      <button class="btn-agregar" data-nombre="Desinfectante Multiusos" data-precio="5.00">Agregar al carrito</button>
+
+      <h3>Descripción</h3>
+      <p>
+        Pack 2x1 de desinfectantes multiusos que eliminan el 99.9% de virus y bacterias. Apto para superficies de cocina, baño, y pisos. Fórmula sin cloro y con fragancia suave para un hogar limpio y seguro.
+      </p>
+    </div>
+  </main>
+
+  <script>
+    document.querySelector(".btn-agregar").addEventListener("click", () => {
+      const nombre = "Desinfectante Multiusos";
+      const precio = 5.00;
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      carrito.push({ nombre, precio });
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+    });
+  </script>
+</body>
+</html>

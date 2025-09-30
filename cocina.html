@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Productos para Cocina</title>
+  <link rel="stylesheet" href="css/areas.css" />
+  <link rel="stylesheet" href="pagina.html">
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div class="top-bar">
+    <div class="top-links">
+      <a href="#">Ayuda</a>
+      <a href="#">Mi Cuenta</a>
+      <a href="#">Ofertas</a>
+      <a href="#">Soporte</a>
+    </div>
+  </div>
+
+  <!-- Botón de regreso -->
+  <a href="pagina.html" class="btn-flecha-regresar" title="Volver al catálogo">
+    ← Volver al catálogo
+  </a>
+
+  <!-- Producto 1 -->
+  <main class="detalle-producto">
+    <img src="https://via.placeholder.com/400x300?text=Desengrasante+Cocina" alt="Desengrasante de cocina" />
+    <div class="info">
+      <h1>Desengrasante Concentrado para Cocina</h1>
+      <p class="precio">$16.00</p>
+      <button class="btn-agregar" data-nombre="Desengrasante Cocina" data-precio="16.00">Agregar al carrito</button>
+      <h3>Descripción</h3>
+      <p>Remueve grasa difícil en estufas, hornos y campanas.</p>
+      <ul>
+        <li>Contenido: 750 ml</li>
+        <li>Aroma cítrico</li>
+        <li>Seguro para acero inoxidable</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Producto 2 -->
+  <main class="detalle-producto">
+    <img src="https://via.placeholder.com/400x300?text=Limpiador+Multiusos" alt="Limpiador Multiusos" />
+    <div class="info">
+      <h1>Limpiador Multiusos con Aroma a Limón</h1>
+      <p class="precio">$11.50</p>
+      <button class="btn-agregar" data-nombre="Limpiador Multiusos Cocina" data-precio="11.50">Agregar al carrito</button>
+      <h3>Descripción</h3>
+      <p>Ideal para limpiar mesones, muebles, electrodomésticos y superficies lisas.</p>
+      <ul>
+        <li>Contenido: 1L</li>
+        <li>Secado rápido</li>
+        <li>Sin residuos químicos</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Producto 3 -->
+  <main class="detalle-producto">
+    <img src="https://via.placeholder.com/400x300?text=Toallas+Absorbentes" alt="Toallas absorbentes" />
+    <div class="info">
+      <h1>Toallas Absorbentes de Cocina</h1>
+      <p class="precio">$6.00</p>
+      <button class="btn-agregar" data-nombre="Toallas Cocina" data-precio="6.00">Agregar al carrito</button>
+      <h3>Descripción</h3>
+      <p>Ideales para absorber líquidos y mantener tus superficies secas.</p>
+      <ul>
+        <li>Paquete de 3 unidades</li>
+        <li>Resistentes y reutilizables</li>
+        <li>Absorción extra</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
+
+<script>
+  document.querySelectorAll('.btn-agregar').forEach(boton => {
+    boton.addEventListener('click', () => {
+      const nombre = boton.getAttribute('data-nombre');
+      const precio = parseFloat(boton.getAttribute('data-precio'));
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push({ nombre, precio });
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+    });
+  });
+</script>

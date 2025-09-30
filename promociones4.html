@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aspiradora Portátil</title>
+  <link rel="stylesheet" href="css/promociones.css" />
+  <link rel="stylesheet" href="pagina.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-links">
+          <a href="#">Ayuda</a>
+          <a href="#">Mi Cuenta</a>
+          <a href="#">Ofertas</a>
+          <a href="#">Soporte</a>
+        </div>
+      </div>
+  <a href="pagina.html" class="btn-flecha-regresar">← Volver al catálogo</a>
+
+  <main class="detalle-producto">
+    <img src="https://via.placeholder.com/300x200?text=Promo+6" alt="Aspiradora Portátil">
+    <div class="info">
+      <h1>Aspiradora Portátil</h1>
+      <p class="precio">$39.90</p>
+      <button class="btn-agregar" data-nombre="Aspiradora Portátil" data-precio="39.90">Agregar al carrito</button>
+
+      <h3>Descripción</h3>
+      <p>
+        Una aspiradora portátil y poderosa, ideal para espacios reducidos como automóviles, sofás y rincones del hogar. Compacta, recargable por USB, y con accesorios intercambiables para cada tipo de superficie. ¡Tu mejor aliada para la limpieza diaria!
+      </p>
+    </div>
+  </main>
+
+  <script>
+    document.querySelector(".btn-agregar").addEventListener("click", () => {
+      const nombre = "Aspiradora Portátil";
+      const precio = 39.90;
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      carrito.push({ nombre, precio });
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+    });
+  </script>
+</body>
+</html>

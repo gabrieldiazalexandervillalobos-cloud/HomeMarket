@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cepillo de Baño</title>
+  <link rel="stylesheet" href="css/produtos.css">
+  <link rel="stylesheet" href="index.html">
+</head>
+<body>
+  <div class="top-bar">
+    <div class="top-links">
+      <a href="#">Ayuda</a>
+      <a href="#">Mi Cuenta</a>
+      <a href="#">Ofertas</a>
+      <a href="#">Soporte</a>
+    </div>
+  </div>
+  <a href="pagina.html" class="btn-flecha-regresar" title="Volver al catalogo">
+    ← Volver al catálogo
+  </a>
+
+  <main class="detalle-producto">
+    <img src="imagen/cepillo-bano.png" alt="Cepillo de Baño">
+    <div class="info">
+      <h1>Cepillo de Baño</h1>
+      <p class="precio">$4.20</p>
+      <button class="btn-agregar" data-nombre="Cepillo de Baño" data-precio="80.00">Agregar al carrito</button>
+
+      <h3>Descripción</h3>
+      <p>Cepillo de baño con mango ergonómico y cerdas resistentes para una limpieza profunda del inodoro y otras superficies.</p>
+
+      <h3>Detalles específicos</h3>
+      <ul>
+        <li>Material: plástico resistente</li>
+        <li>Mango antideslizante</li>
+        <li>Incluye base para almacenamiento</li>
+        <li>Diseño compacto y funcional</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
+
+<script>
+  // Seleccionamos todos los botones con la clase 'btn-agregar'
+  document.querySelectorAll('.btn-agregar').forEach(boton => {
+    boton.addEventListener('click', () => {
+      const nombre = boton.getAttribute('data-nombre');
+      const precio = parseFloat(boton.getAttribute('data-precio'));
+
+      // Obtener carrito actual o crear uno nuevo
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+      // Agregar producto al carrito
+      carrito.push({ nombre, precio });
+
+      // Guardar carrito actualizado en localStorage
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+    });
+  });
+</script>
